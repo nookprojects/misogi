@@ -3,342 +3,438 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Misogi Journal App – Support & Privacy</title>
-  <meta name="description" content="Support and privacy policy for Misogi Journal – One brave thing. One year." />
+  <title>Misogi Journal – One Brave Thing. One Year.</title>
+  <meta name="description" content="Support, privacy policy, and terms of use for Misogi Journal – One brave thing. One year." />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --stone-50: #fafaf9;
-      --stone-100: #f5f5f4;
-      --stone-200: #e7e5e4;
-      --stone-400: #a8a29e;
-      --stone-600: #57534e;
-      --stone-800: #292524;
-      --stone-900: #1c1917;
+      --cream:      #f5f0e8;
+      --cream-dark: #ede7d9;
+      --cream-mid:  #e8e0cf;
+      --terra:      #c4614a;
+      --terra-dark: #a84e3b;
+      --terra-muted:#d4826e;
+      --ink:        #2c2420;
+      --ink-mid:    #5a4a44;
+      --ink-light:  #8a7570;
     }
 
+    html { scroll-behavior: smooth; }
+
     body {
-      font-family: Georgia, 'Times New Roman', serif;
-      background: var(--stone-50);
-      color: var(--stone-800);
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
       line-height: 1.8;
     }
 
-    /* NAV */
+    /* ── NAV ── */
     nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(245, 245, 244, 0.85);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--stone-200);
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(245, 240, 232, 0.88);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--cream-mid);
       padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      display: flex; justify-content: space-between; align-items: center;
     }
-    nav .brand {
-      font-size: 1.25rem;
-      font-weight: 300;
-      letter-spacing: 0.05em;
-      text-decoration: none;
-      color: var(--stone-800);
+    .brand {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.2rem; font-weight: 400;
+      letter-spacing: 0.03em;
+      text-decoration: none; color: var(--ink);
     }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-    }
+    nav ul { list-style: none; display: flex; gap: 2rem; }
     nav ul a {
-      text-decoration: none;
-      font-family: -apple-system, sans-serif;
-      font-size: 0.85rem;
-      color: var(--stone-600);
-      transition: color 0.2s;
+      text-decoration: none; font-size: 0.85rem; font-weight: 400;
+      color: var(--ink-mid); transition: color 0.2s;
     }
-    nav ul a:hover { color: var(--stone-800); }
+    nav ul a:hover { color: var(--terra); }
 
-    /* HERO */
+    /* ── HERO ── */
     .hero {
+      min-height: 92vh;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
       text-align: center;
-      padding: 6rem 2rem 4rem;
-      background: linear-gradient(180deg, var(--stone-100) 0%, var(--stone-50) 100%);
-      border-bottom: 1px solid var(--stone-200);
+      padding: 6rem 2rem 5rem;
+      background: linear-gradient(160deg, var(--cream) 0%, var(--cream-dark) 100%);
+      border-bottom: 1px solid var(--cream-mid);
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 30%, rgba(196,97,74,0.07) 0%, transparent 60%);
+    }
+    .hero-eyebrow {
+      font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--terra); font-weight: 500; margin-bottom: 1.5rem;
     }
     .hero h1 {
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
-      font-weight: 300;
-      letter-spacing: -0.02em;
-      margin-bottom: 1rem;
+      font-family: 'Libre Baskerville', serif;
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 400; line-height: 1.1;
+      letter-spacing: -0.02em; margin-bottom: 1.25rem;
     }
     .hero p {
-      font-size: 1.2rem;
-      color: var(--stone-600);
-      font-style: italic;
-      margin-bottom: 2rem;
+      font-size: 1.2rem; color: var(--ink-mid);
+      font-style: italic; font-family: 'Libre Baskerville', serif;
+      margin-bottom: 2.5rem;
     }
-    .badge {
-      display: inline-block;
-      background: var(--stone-800);
-      color: var(--stone-50);
-      font-family: -apple-system, sans-serif;
-      font-size: 0.8rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.4rem 1rem;
-      border-radius: 2rem;
+    .app-store-btn {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: var(--ink); color: var(--cream);
+      text-decoration: none; padding: 0.85rem 1.75rem;
+      border-radius: 0.6rem; font-size: 0.9rem; font-weight: 400;
+      transition: background 0.2s, transform 0.2s;
     }
+    .app-store-btn:hover { background: var(--terra-dark); transform: translateY(-1px); }
+    .app-store-btn svg { width: 20px; height: 20px; fill: var(--cream); }
 
-    /* SECTIONS */
-    .container {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    section {
-      padding: 5rem 0;
-      border-bottom: 1px solid var(--stone-200);
-    }
+    /* ── SECTIONS ── */
+    .container { max-width: 720px; margin: 0 auto; padding: 0 2rem; }
+    section { padding: 5rem 0; border-bottom: 1px solid var(--cream-mid); }
     section:last-of-type { border-bottom: none; }
 
     h2 {
-      font-size: 2rem;
-      font-weight: 300;
-      letter-spacing: -0.01em;
-      margin-bottom: 2rem;
+      font-family: 'Libre Baskerville', serif;
+      font-size: 2.2rem; font-weight: 400;
+      letter-spacing: -0.01em; margin-bottom: 1.75rem;
     }
     h3 {
-      font-size: 1.15rem;
-      font-weight: 400;
-      margin: 2rem 0 0.75rem;
-      font-family: -apple-system, sans-serif;
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.15rem; font-weight: 400;
+      margin: 2.25rem 0 0.6rem; color: var(--ink);
     }
-    p {
-      color: var(--stone-600);
-      font-family: -apple-system, sans-serif;
-      font-size: 1rem;
-      margin-bottom: 1rem;
-      font-weight: 300;
+    p { color: var(--ink-mid); font-size: 1rem; font-weight: 300; margin-bottom: 1rem; }
+    a { color: var(--terra); }
+    a:hover { color: var(--terra-dark); }
+
+    /* ── FEATURE LIST ── */
+    ul.feat {
+      list-style: none; margin-bottom: 1rem;
     }
-    ul.feature-list {
-      list-style: none;
-      margin-bottom: 1rem;
-    }
-    ul.feature-list li {
-      font-family: -apple-system, sans-serif;
-      font-size: 1rem;
-      color: var(--stone-600);
-      font-weight: 300;
-      padding: 0.5rem 0;
-      border-left: 2px solid var(--stone-200);
-      padding-left: 1rem;
-      margin-bottom: 0.5rem;
+    ul.feat li {
+      font-size: 0.95rem; color: var(--ink-mid); font-weight: 300;
+      padding: 0.55rem 0 0.55rem 1.1rem;
+      border-left: 2px solid var(--cream-mid);
+      margin-bottom: 0.4rem;
       transition: border-color 0.2s;
     }
-    ul.feature-list li:hover { border-color: var(--stone-400); }
+    ul.feat li:hover { border-color: var(--terra-muted); color: var(--ink); }
 
-    /* CONTACT CARD */
-    .contact-card {
-      background: var(--stone-100);
-      border: 1px solid var(--stone-200);
+    /* ── PLUS CARD ── */
+    .plus-card {
+      background: var(--ink);
+      color: var(--cream);
+      border-radius: 1rem;
+      padding: 2.5rem;
+      margin-top: 2.5rem;
+    }
+    .plus-card h3 {
+      font-family: 'Libre Baskerville', serif;
+      color: var(--cream); font-size: 1.4rem; margin-top: 0; margin-bottom: 0.5rem;
+    }
+    .plus-card p { color: rgba(245,240,232,0.7); margin-bottom: 0.75rem; }
+    .plus-card ul.feat li { color: rgba(245,240,232,0.75); border-color: rgba(245,240,232,0.15); }
+    .plus-card ul.feat li:hover { color: var(--cream); border-color: var(--terra-muted); }
+    .plus-tag {
+      display: inline-block;
+      background: var(--terra);
+      color: var(--cream);
+      font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+      padding: 0.25rem 0.75rem; border-radius: 2rem;
+      margin-bottom: 1.25rem; font-weight: 500;
+    }
+
+    /* ── CONTACT CARD ── */
+    .info-card {
+      background: var(--cream-dark);
+      border: 1px solid var(--cream-mid);
       border-radius: 0.75rem;
-      padding: 2rem;
-      margin-top: 2rem;
+      padding: 2rem; margin-top: 2rem;
     }
-    .contact-card a {
-      color: var(--stone-800);
-      font-family: -apple-system, sans-serif;
-    }
+    .info-card h3 { margin-top: 0; }
+    .info-card p { margin-bottom: 0.4rem; }
 
-    /* FOOTER */
+    /* ── META TABLE ── */
+    table {
+      width: 100%; border-collapse: collapse;
+      font-size: 0.9rem; margin-top: 1.5rem;
+    }
+    td {
+      padding: 0.65rem 0.75rem;
+      border-bottom: 1px solid var(--cream-mid);
+      color: var(--ink-mid); font-weight: 300;
+    }
+    td:first-child { color: var(--ink); font-weight: 400; width: 40%; }
+
+    /* ── FOOTER ── */
     footer {
-      padding: 3rem 2rem;
-      text-align: center;
-      background: var(--stone-100);
-      border-top: 1px solid var(--stone-200);
+      padding: 3rem 2rem; text-align: center;
+      background: var(--cream-dark);
+      border-top: 1px solid var(--cream-mid);
     }
-    footer p {
-      font-size: 0.85rem;
-      color: var(--stone-400);
-      margin-bottom: 0.25rem;
-    }
+    footer p { font-size: 0.8rem; color: var(--ink-light); margin-bottom: 0.25rem; }
 
-    /* ANCHOR OFFSET */
     [id] { scroll-margin-top: 5rem; }
   </style>
 </head>
 <body>
 
-  <nav>
-    <a href="#" class="brand">Misogi Journal</a>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#support">Support</a></li>
-      <li><a href="#privacy">Privacy</a></li>
-      <li><a href="#contact">Contact</a></li>
+<!-- NAV -->
+<nav>
+  <a href="#" class="brand">Misogi Journal</a>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#plus">Plus</a></li>
+    <li><a href="#privacy">Privacy</a></li>
+    <li><a href="#terms">Terms</a></li>
+    <li><a href="#support">Support</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <p class="hero-eyebrow">iOS App</p>
+  <h1>Misogi<br>Journal</h1>
+  <p>One brave thing. One year.</p>
+  <a href="https://apps.apple.com" class="app-store-btn" target="_blank">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+    </svg>
+    Download on the App Store
+  </a>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <h2>About the App</h2>
+    <p>
+      Misogi Journal is a daily journaling and goal-tracking app inspired by the Japanese purification ritual and the modern challenge framework popularised by Jesse Itzler — choosing one bold, uncomfortable goal each year that forces real growth.
+    </p>
+    <p>
+      Most goal-setting tools ask you to juggle a dozen priorities. Misogi Journal asks for one. One impossible thing. Then shows up with you for 365 days.
+    </p>
+
+    <h3>Features</h3>
+    <ul class="feat">
+      <li>Define and commit to your annual Misogi challenge</li>
+      <li>Daily journal prompts tailored to your goal</li>
+      <li>Mood and momentum tracking across the year</li>
+      <li>Monthly review and milestone check-ins</li>
+      <li>Mental toughness prompts for the hard days</li>
+      <li>Year-end reflection and transformation summary</li>
+      <li>Streak tracking to build the daily habit</li>
     </ul>
-  </nav>
 
-  <!-- HERO -->
-  <div class="hero">
-    <h1>Misogi Journal</h1>
-    <p>One brave thing. One year.</p>
-    <span class="badge">Available on the App Store</span>
+    <h3>App Info</h3>
+    <table>
+      <tr><td>Bundle ID</td><td>com.misogi</td></tr>
+      <tr><td>Version</td><td>1.0</td></tr>
+      <tr><td>Platform</td><td>iOS 16.0+</td></tr>
+      <tr><td>Devices</td><td>iPhone, iPad</td></tr>
+      <tr><td>Developer</td><td>Misogi Journal</td></tr>
+      <tr><td>Category</td><td>Health & Fitness / Lifestyle</td></tr>
+    </table>
   </div>
+</section>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="container">
-      <h2>About the App</h2>
-      <p>
-        Misogi Journal is a daily journaling app inspired by the Japanese ritual of purification and the modern challenge framework popularised by Jesse Itzler — choosing one bold, uncomfortable goal each year that forces real growth.
-      </p>
-      <p>
-        Most goal-setting tools ask you to juggle a dozen priorities. Misogi Journal asks you to choose one thing. One impossible thing. Then show up for 365 days.
-      </p>
+<!-- MISOGI PLUS -->
+<section id="plus">
+  <div class="container">
+    <h2>Misogi Plus</h2>
+    <p>
+      The free version of Misogi Journal gives you everything you need to begin your challenge. Misogi Plus unlocks the full experience for committed practitioners.
+    </p>
 
-      <h3>Features</h3>
-      <ul class="feature-list">
-        <li>Set and commit to your annual Misogi goal</li>
-        <li>Daily reflection prompts tailored to your challenge</li>
-        <li>Progress tracking across the full year</li>
-        <li>Journal entries with mood and momentum markers</li>
-        <li>Monthly review and milestone check-ins</li>
-        <li>Mental toughness prompts for hard days</li>
-        <li>Year-end reflection and transformation summary</li>
+    <div class="plus-card">
+      <span class="plus-tag">Plus</span>
+      <h3>Unlock the Full Year</h3>
+      <p>Everything in the free version, plus:</p>
+      <ul class="feat">
+        <li>Unlimited journal entries and past-year archives</li>
+        <li>Advanced progress analytics and insights</li>
+        <li>Full prompt library — 365 unique daily prompts</li>
+        <li>Custom Misogi categories and tags</li>
+        <li>iCloud sync across all your devices</li>
+        <li>Export your year as a PDF memoir</li>
+        <li>Early access to new features</li>
       </ul>
-
-      <h3>Version</h3>
-      <p>Current version: 1.0 &nbsp;|&nbsp; Requires iOS 16.0 or later &nbsp;|&nbsp; Compatible with iPhone and iPad</p>
     </div>
-  </section>
 
-  <!-- SUPPORT -->
-  <section id="support">
-    <div class="container">
-      <h2>Support</h2>
-      <p>
-        We're here to help. If you're experiencing any issues with Misogi Journal or have questions about how the app works, please reach out and we'll get back to you as soon as possible.
-      </p>
+    <h3>Subscription Details</h3>
+    <ul class="feat">
+      <li>Monthly plan: auto-renews monthly</li>
+      <li>Annual plan: auto-renews yearly (best value)</li>
+      <li>Payment charged to your Apple ID at confirmation of purchase</li>
+      <li>Manage or cancel any time via your Apple ID settings</li>
+      <li>No refunds for partial subscription periods</li>
+      <li>Prices may vary by region based on local App Store pricing</li>
+    </ul>
+  </div>
+</section>
 
-      <h3>Frequently Asked Questions</h3>
+<!-- PRIVACY POLICY -->
+<section id="privacy">
+  <div class="container">
+    <h2>Privacy Policy</h2>
+    <p><em>Last updated: June 2026</em></p>
+    <p>
+      Your privacy matters. This policy explains how Misogi Journal ("we", "us", "our") handles your data when you use our iOS application.
+    </p>
 
-      <h3>How do I choose my Misogi?</h3>
-      <p>
-        Your Misogi should be something that genuinely scares you — something you have roughly a 50% chance of achieving this year. It can be physical, creative, professional, or personal. The app walks you through a guided setup to help you define and commit to your challenge.
-      </p>
+    <h3>What We Collect</h3>
+    <p>Misogi Journal collects minimal data to operate the app:</p>
+    <ul class="feat">
+      <li><strong>Journal entries and goal data</strong> — stored locally on your device and optionally synced to your personal iCloud account (Misogi Plus). We cannot access this data.</li>
+      <li><strong>Anonymous crash and diagnostics data</strong> — via Apple's built-in crash reporting to help us fix bugs. Cannot identify you.</li>
+      <li><strong>Anonymous usage analytics</strong> — general feature usage patterns to improve the app. No personal identifiers.</li>
+    </ul>
 
-      <h3>Can I change my Misogi mid-year?</h3>
-      <p>
-        Yes, though we encourage deep reflection first. A Misogi is designed to be uncomfortable — wanting to change it is often part of the process. The app lets you amend your goal with a journal entry explaining the change, so your growth journey remains honest and intact.
-      </p>
+    <h3>Third-Party Services</h3>
+    <p>We use the following services to operate the app:</p>
+    <ul class="feat">
+      <li><strong>Supabase</strong> — used for optional account features and data sync. Supabase processes data per their <a href="https://supabase.com/privacy" target="_blank">privacy policy</a>. We store only what is needed to provide the service.</li>
+      <li><strong>RevenueCat</strong> — used to manage in-app subscriptions and purchases. RevenueCat may collect purchase history and device identifiers. See their <a href="https://www.revenuecat.com/privacy" target="_blank">privacy policy</a>.</li>
+      <li><strong>Apple / App Store</strong> — purchases are processed by Apple. Payment details are never shared with us. See <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple's privacy policy</a>.</li>
+    </ul>
 
-      <h3>Is my journal data backed up?</h3>
-      <p>
-        Your journal data is stored locally on your device. We recommend regularly backing up your device via iCloud or iTunes to ensure your entries are not lost.
-      </p>
+    <h3>What We Do Not Do</h3>
+    <ul class="feat">
+      <li>We do not sell your data to any third party</li>
+      <li>We do not use your journal entries for advertising or AI training</li>
+      <li>We do not track you across other apps or websites</li>
+      <li>We do not collect your name, email, or contact details unless you voluntarily provide them for support</li>
+    </ul>
 
-      <h3>How do I restore a purchase?</h3>
-      <p>
-        Open the app, go to Settings, and tap "Restore Purchases." Your App Store account will be used to verify any prior purchases.
-      </p>
+    <h3>Data Retention & Deletion</h3>
+    <p>
+      Journal data stored locally is deleted when you uninstall the app. iCloud data can be deleted via your iCloud settings. Any account data held via Supabase can be deleted on request — email us at <a href="mailto:privacy@misogijournal.com">privacy@misogijournal.com</a>.
+    </p>
 
-      <h3>How do I delete my account or data?</h3>
-      <p>
-        Since all data is stored locally on your device, you can delete the app to remove all data. To delete specific journal entries, use the delete option within each entry inside the app.
-      </p>
+    <h3>Children's Privacy</h3>
+    <p>
+      Misogi Journal is intended for users 17 and older. We do not knowingly collect information from children under 13. If you believe a child has provided personal data, contact us immediately.
+    </p>
 
-      <div class="contact-card">
-        <p style="color: var(--stone-800); font-size: 1rem; margin-bottom: 0.5rem;">Still need help?</p>
-        <p>Email us at <a href="mailto:support@misogijournal.com">support@misogijournal.com</a> and we'll respond within 1–2 business days.</p>
-      </div>
+    <h3>Changes to This Policy</h3>
+    <p>
+      We may update this policy occasionally. Changes will be reflected by the updated date above. Continued use of the app constitutes acceptance.
+    </p>
+
+    <div class="info-card">
+      <p>Privacy questions? Contact us at <a href="mailto:privacy@misogijournal.com">privacy@misogijournal.com</a></p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- PRIVACY -->
-  <section id="privacy">
-    <div class="container">
-      <h2>Privacy Policy</h2>
-      <p><em>Last updated: June 2026</em></p>
+<!-- TERMS OF USE -->
+<section id="terms">
+  <div class="container">
+    <h2>Terms of Use</h2>
+    <p><em>Last updated: June 2026</em></p>
+    <p>
+      By downloading or using Misogi Journal, you agree to these terms. Please read them carefully.
+    </p>
 
-      <p>
-        Your privacy is important to us. This policy describes how Misogi Journal ("we", "us", or "our") handles your information when you use our iOS application.
-      </p>
+    <h3>Licence</h3>
+    <p>
+      We grant you a personal, non-exclusive, non-transferable licence to use Misogi Journal on your Apple devices. You may not copy, modify, reverse engineer, or redistribute any part of the app.
+    </p>
 
-      <h3>Information We Collect</h3>
-      <p>
-        Misogi Journal is designed with privacy in mind. The app stores all journal entries, goals, and personal reflections <strong>locally on your device only</strong>. We do not collect, transmit, or store your personal journal data on any external servers.
-      </p>
-      <p>We may collect the following limited, non-personal data:</p>
-      <ul class="feature-list">
-        <li>Anonymous crash reports to help us fix bugs (via Apple's built-in crash reporting)</li>
-        <li>Anonymous usage analytics to understand general app usage patterns (e.g. feature usage, session length)</li>
-      </ul>
-      <p>This data cannot be used to identify you personally.</p>
+    <h3>Subscriptions</h3>
+    <ul class="feat">
+      <li>Misogi Plus subscriptions are billed through your Apple ID</li>
+      <li>Subscriptions auto-renew unless cancelled at least 24 hours before the end of the current period</li>
+      <li>You can manage subscriptions in your Apple ID account settings</li>
+      <li>We do not offer refunds for unused portions of a subscription period</li>
+      <li>Prices are subject to change with notice</li>
+    </ul>
 
-      <h3>Information We Do Not Collect</h3>
-      <ul class="feature-list">
-        <li>We do not collect your name, email address, or contact information</li>
-        <li>We do not read, access, or transmit your journal entries or goal data</li>
-        <li>We do not sell or share any data with third parties for advertising purposes</li>
-        <li>We do not use tracking technologies or third-party advertising SDKs</li>
-      </ul>
+    <h3>Acceptable Use</h3>
+    <p>You agree not to:</p>
+    <ul class="feat">
+      <li>Use the app for any unlawful purpose</li>
+      <li>Attempt to gain unauthorised access to any part of the service</li>
+      <li>Reverse engineer, decompile, or disassemble any part of the app</li>
+      <li>Use the app to transmit harmful, offensive, or abusive content</li>
+    </ul>
 
-      <h3>In-App Purchases</h3>
-      <p>
-        Any purchases made within the app are processed entirely by Apple through the App Store. We do not receive or store your payment information.
-      </p>
+    <h3>Disclaimer</h3>
+    <p>
+      Misogi Journal is a journaling and personal development tool. It is not a medical, psychological, or therapeutic product. We make no warranties that the app will meet your specific goals or produce particular outcomes. Use the app at your own discretion.
+    </p>
+    <p>
+      The concept of Misogi involves challenging physical, creative, or professional goals. We are not responsible for any physical injury, financial loss, or other consequence resulting from goals you set within the app. Please exercise good judgment and consult appropriate professionals before undertaking extreme challenges.
+    </p>
 
-      <h3>Children's Privacy</h3>
-      <p>
-        Misogi Journal is intended for users aged 17 and over. We do not knowingly collect any information from children under the age of 13. If you believe a child has provided personal information, please contact us immediately.
-      </p>
+    <h3>Limitation of Liability</h3>
+    <p>
+      To the maximum extent permitted by law, Misogi Journal shall not be liable for any indirect, incidental, or consequential damages arising from your use of the app.
+    </p>
 
-      <h3>Data Retention & Deletion</h3>
-      <p>
-        Since all data is stored locally on your device, you have full control. Deleting the app removes all associated data. There is no account to delete on our end.
-      </p>
+    <h3>Governing Law</h3>
+    <p>
+      These terms are governed by the laws of New South Wales, Australia. Any disputes shall be subject to the exclusive jurisdiction of the courts of New South Wales.
+    </p>
 
-      <h3>Third-Party Services</h3>
-      <p>
-        The app may use Apple frameworks (such as StoreKit for purchases and CloudKit for optional iCloud backup). These are governed by <a href="https://www.apple.com/legal/privacy/" target="_blank" style="color: var(--stone-800);">Apple's Privacy Policy</a>.
-      </p>
+    <h3>Changes to Terms</h3>
+    <p>
+      We may update these terms at any time. Continued use of the app after changes constitutes your acceptance.
+    </p>
+  </div>
+</section>
 
-      <h3>Changes to This Policy</h3>
-      <p>
-        We may update this privacy policy from time to time. Any changes will be posted on this page with an updated date. Continued use of the app after changes constitutes acceptance of the updated policy.
-      </p>
+<!-- SUPPORT -->
+<section id="support">
+  <div class="container">
+    <h2>Support</h2>
+    <p>Having trouble, or just want to say hello? We're here.</p>
 
+    <h3>How do I choose my Misogi?</h3>
+    <p>
+      Your Misogi should genuinely scare you — roughly a 50% chance of success this year. Physical, creative, professional, or personal. The app guides you through a setup flow to help you define and commit.
+    </p>
+
+    <h3>Can I change my Misogi mid-year?</h3>
+    <p>
+      Yes. We encourage reflection first — wanting to quit is often part of the process. The app lets you amend your goal with a journal entry, keeping your growth record honest.
+    </p>
+
+    <h3>How do I restore purchases?</h3>
+    <p>
+      Open the app → Settings → Restore Purchases. Your Apple ID will verify any prior subscriptions.
+    </p>
+
+    <h3>How do I cancel Misogi Plus?</h3>
+    <p>
+      Go to your iPhone Settings → Apple ID → Subscriptions → Misogi Journal → Cancel Subscription.
+    </p>
+
+    <h3>How do I delete my data?</h3>
+    <p>
+      Local data is removed when you delete the app. For any account or Supabase data, email <a href="mailto:privacy@misogijournal.com">privacy@misogijournal.com</a> and we'll action it within 7 days.
+    </p>
+
+    <div class="info-card">
       <h3>Contact Us</h3>
-      <p>
-        If you have any questions or concerns about this privacy policy, please contact us at <a href="mailto:privacy@misogijournal.com" style="color: var(--stone-800);">privacy@misogijournal.com</a>.
-      </p>
+      <p>General: <a href="mailto:hello@misogijournal.com">hello@misogijournal.com</a></p>
+      <p>Support: <a href="mailto:support@misogijournal.com">support@misogijournal.com</a></p>
+      <p>Privacy: <a href="mailto:privacy@misogijournal.com">privacy@misogijournal.com</a></p>
+      <p style="margin-top: 1rem; font-size: 0.85rem;">Bundle ID: <code>com.misogi</code> &nbsp;|&nbsp; Version: 1.0</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <p>We'd love to hear from you — whether it's a bug report, a feature request, or a story about your Misogi.</p>
-
-      <div class="contact-card">
-        <h3 style="margin-top: 0;">Get in Touch</h3>
-        <p>General enquiries: <a href="mailto:hello@misogijournal.com">hello@misogijournal.com</a></p>
-        <p>Support: <a href="mailto:support@misogijournal.com">support@misogijournal.com</a></p>
-        <p>Privacy: <a href="mailto:privacy@misogijournal.com">privacy@misogijournal.com</a></p>
-        <p style="margin-top: 1.5rem;">Follow along on Instagram: <a href="https://instagram.com/misogijournal" target="_blank">@misogijournal</a></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2026 Misogi Journal. Do something impossible.</p>
-    <p>misogijournal.com</p>
-  </footer>
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Misogi Journal. Do something impossible.</p>
+  <p>misogijournal.com &nbsp;·&nbsp; <a href="mailto:hello@misogijournal.com" style="color: var(--ink-light);">hello@misogijournal.com</a></p>
+</footer>
 
 </body>
 </html>
